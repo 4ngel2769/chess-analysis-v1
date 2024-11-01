@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Performance Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h2>Input Custom Data</h2>
+            <form id="dataForm">
+                <label for="NR">Normalized Result (NR):</label>
+                <input type="number" id="NR" name="NR" step="0.1" min="0" max="1" value="1" required>
+                
+                <label for="NA">Normalized Accuracy (NA):</label>
+                <input type="number" id="NA" name="NA" step="0.01" min="0" max="1" value="0.9" required>
+                
+                <label for="ST">Starting Time (ST) in seconds:</label>
+                <input type="number" id="ST" name="ST" min="0" value="600" required>
+                
+                <label for="INC">Increment (INC) in seconds:</label>
+                <input type="number" id="INC" name="INC" min="0" value="15" required>
+                
+                <label for="MOV">Moves Made (MOV):</label>
+                <input type="number" id="MOV" name="MOV" min="0" value="50" required>
+                
+                <label for="TL">Time Left (TL) in seconds:</label>
+                <input type="number" id="TL" name="TL" min="0" value="300" required>
+                
+                <button type="submit">Calculate Performance</button>
+            </form>
+        </div>
+
+        <div class="output-container">
+            <h2>Performance Index</h2>
+            <div id="performance-output"></div>
+            
+            <h3>Performance Chart</h3>
+            <canvas id="performanceChart"></canvas>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
